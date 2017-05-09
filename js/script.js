@@ -18,7 +18,7 @@ function loadData() {
 	
 	var streetviewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + adress + '';
 	$body.append('<img class="bgimg" src="' + streetviewUrl + '">');
-	var nyTimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + cityStr + '&sort=newest&api-key=11db0a78e2e841408a013a4687d47474'
+	var nyTimesUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + cityStr + '&sort=newest&api-key=11db0a78e2e841408a013a4687d47474'
 	$.getJSON(nyTimesUrl, function(data){
 		$nytHeaderElem.text('New York Times Articles About ' + cityStr);
 		articles = data.response.docs;
@@ -31,7 +31,7 @@ function loadData() {
 	});
 	
 	
-	var wikiUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch=' + cityStr + '&format=json&callback=wikiCallback';
+	var wikiUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch=' + cityStr + '&format=json&callback=wikiCallback';
 	
 	$.ajax({
 		method: "GET",
@@ -45,7 +45,7 @@ function loadData() {
 			var page = pages[pageId];
 			
 			var pageTitle = page.title;
-			$wikiElem.append('<li><a href="http://en.wikipedia.org/?curid=' + pageId + '">' + pageTitle + '</a></li>');
+			$wikiElem.append('<li><a href="https://en.wikipedia.org/?curid=' + pageId + '">' + pageTitle + '</a></li>');
 		}
 	});
     return false;

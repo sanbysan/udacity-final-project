@@ -16,7 +16,7 @@ function loadData() {
 	
 	$greeting.text('So, you want to live at ' + adress + '?');
 	
-	var streetviewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + adress + '';
+	var streetviewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + adress + '&key=AIzaSyBIx6s77HW-vw3DMawVqLu6yQNHhEtJ6gA ';
 	$body.append('<img class="bgimg" src="' + streetviewUrl + '">');
 	var nyTimesUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + cityStr + '&sort=newest&api-key=11db0a78e2e841408a013a4687d47474'
 	$.getJSON(nyTimesUrl, function(data){
